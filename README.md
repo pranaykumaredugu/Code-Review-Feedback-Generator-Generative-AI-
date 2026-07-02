@@ -1,2 +1,33 @@
-# Code-Review-Feedback-Generator-Generative-AI-
-Built an AI-powered code review application using LLMs, LangChain, and Streamlit. Analyzes code, detects syntax and quality issues, and provides structured feedback with improvement suggestions using JSON outputs.
+.env
+.env.local
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+ENV/
+env/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.streamlit/

@@ -1,0 +1,39 @@
+# prompt.py
+# ---------------------------------------------------------------
+# PURPOSE: Build the instruction we send to the AI model.
+# Think of this as writing the "question" in a very specific way
+# so the AI always gives back a consistent, structured answer.
+# ---------------------------------------------------------------
+
+def build_prompt(code_snippet: str) -> str:
+    """
+    Takes the user's code and wraps it inside a detailed instruction
+    so the AI knows EXACTLY what to do and what format to reply in.
+    """
+    prompt = f"""You are an expert code reviewer. Analyze the following code snippet carefully.
+
+Your job is to:
+1. Identify any issues (syntax errors, bad practices, indentation problems, naming issues, etc.)
+2. Suggest specific improvements
+3. Rate the overall code quality as one of: "Low", "Medium", or "High"
+4. Write a short review summary
+
+IMPORTANT RULES:
+- Do NOT execute or run the code
+- Only analyze the snippet as provided
+- Respond ONLY with valid JSON — no explanation outside the JSON, no markdown fences
+
+Respond in this exact JSON format:
+{{
+  "identified_issues": ["issue 1", "issue 2"],
+  "improvement_suggestions": ["suggestion 1", "suggestion 2"],
+  "code_quality_level": "Low" or "Medium" or "High",
+  "review_summary": "A concise summary of the code quality and main findings."
+}}
+
+Code to review:
+```
+{code_snippet}
+```
+"""
+    return prompt
