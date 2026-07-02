@@ -1,55 +1,36 @@
-🔍 Code Review AI
-An AI-powered code review assistant that analyzes your code and returns structured feedback — instantly.
+# 🔍 Code Review AI
 
-Built as part of the Generative AI curriculum at Innomatics Research Labs, this project demonstrates real-world usage of LLMs, prompt engineering, and structured output parsing.
+An AI-powered code review application that analyzes code using LLMs and provides intelligent feedback.
 
-💡 What It Does
-Paste any code snippet and get back:
+---
 
-🐛 Identified Issues — syntax errors, bad practices, indentation problems
-💡 Improvement Suggestions — practical tips to write better code
-🎯 Code Quality Rating — Low / Medium / High
-📋 Review Summary — a short human-readable verdict
-🛠️ Tech Stack
-Technology	Purpose
-Python	Core language
-Groq API (Llama 3)	AI model for code analysis
-Prompt Templates	Structured input formatting for LLM
-JSON Parser	Validated structured output
-Streamlit	Web interface
-🚀 How to Run Locally
-1. Clone the repository
+## 💡 What It Does
 
-git clone https://github.com/yourusername/code-review-ai.git
-cd code-review-ai
-2. Install dependencies
+- Detects syntax errors
+- Reviews code quality
+- Suggests improvements
+- Generates structured JSON output
+- Built with Streamlit
 
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|----------|
+| Python | Core Language |
+| LangChain | Prompt Management |
+| OpenAI/Groq | LLM |
+| Streamlit | Web App |
+| JSON | Structured Output |
+
+---
+
+## 🚀 How to Run
+
+```bash
+git clone https://github.com/yourusername/Code-Review-Feedback-Generator.git
+cd Code-Review-Feedback-Generator
 pip install -r requirements.txt
-3. Add your API key
-
-Create a .env file in the root folder:
-
-GROQ_API_KEY=your_groq_api_key_here
-Get your free key at console.groq.com
-
-4. Run the app
-
 streamlit run streamlit_app.py
-📁 Project Structure
-code_review_ai/
-├── app/
-│   ├── prompt.py       # Builds the instruction sent to the LLM
-│   ├── model.py        # Handles API call to Groq
-│   └── parser.py       # Validates and parses JSON response
-├── tests/
-│   └── test_cases.py   # 3 test cases (correct, syntax error, poor naming)
-├── main.py             # CLI entry point
-├── streamlit_app.py    # Web UI
-└── requirements.txt
-📸 Demo
-Input	Output
-Code with syntax error	Flags indentation issue, rates Low
-Code with poor naming	Suggests readable variable names, rates Medium
-Clean well-written code	No issues found, rates High
-Sprint 2 — Deployment
-Sprint 3 — Presentation & documentation
+```
