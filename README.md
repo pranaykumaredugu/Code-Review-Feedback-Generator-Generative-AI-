@@ -1,33 +1,55 @@
-.env
-.env.local
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-.venv/
-venv/
-ENV/
-env/
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-.streamlit/
+🔍 Code Review AI
+An AI-powered code review assistant that analyzes your code and returns structured feedback — instantly.
+
+Built as part of the Generative AI curriculum at Innomatics Research Labs, this project demonstrates real-world usage of LLMs, prompt engineering, and structured output parsing.
+
+💡 What It Does
+Paste any code snippet and get back:
+
+🐛 Identified Issues — syntax errors, bad practices, indentation problems
+💡 Improvement Suggestions — practical tips to write better code
+🎯 Code Quality Rating — Low / Medium / High
+📋 Review Summary — a short human-readable verdict
+🛠️ Tech Stack
+Technology	Purpose
+Python	Core language
+Groq API (Llama 3)	AI model for code analysis
+Prompt Templates	Structured input formatting for LLM
+JSON Parser	Validated structured output
+Streamlit	Web interface
+🚀 How to Run Locally
+1. Clone the repository
+
+git clone https://github.com/yourusername/code-review-ai.git
+cd code-review-ai
+2. Install dependencies
+
+pip install -r requirements.txt
+3. Add your API key
+
+Create a .env file in the root folder:
+
+GROQ_API_KEY=your_groq_api_key_here
+Get your free key at console.groq.com
+
+4. Run the app
+
+streamlit run streamlit_app.py
+📁 Project Structure
+code_review_ai/
+├── app/
+│   ├── prompt.py       # Builds the instruction sent to the LLM
+│   ├── model.py        # Handles API call to Groq
+│   └── parser.py       # Validates and parses JSON response
+├── tests/
+│   └── test_cases.py   # 3 test cases (correct, syntax error, poor naming)
+├── main.py             # CLI entry point
+├── streamlit_app.py    # Web UI
+└── requirements.txt
+📸 Demo
+Input	Output
+Code with syntax error	Flags indentation issue, rates Low
+Code with poor naming	Suggests readable variable names, rates Medium
+Clean well-written code	No issues found, rates High
+Sprint 2 — Deployment
+Sprint 3 — Presentation & documentation
